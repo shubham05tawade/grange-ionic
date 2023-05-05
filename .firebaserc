@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "grange-c8790": {
+      "hosting": {
+        "app": [
+          "grange-c8790"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "grange-c8790"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "grange",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

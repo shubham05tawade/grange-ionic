@@ -1,0 +1,72 @@
+.login-container{
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.login-top-container{
+    width: 100vw;
+    height: 40vh;
+    background-color: #004C6C;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+.login-top-img{
+    object-fit: contain;
+    width: 13rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+}
+.login-top-header{
+    font-family: Poppins !important;
+    margin-top: 2.7rem;
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+}
+.login-bottom-container{
+    width: 100vw;
+    height: 60vh;
+}
+.login-form{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: Poppins !important;
+}
+.login-form h5{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+ion-input{
+    padding: 0.7rem !important;
+    background-color: #CFCFCF;
+    border-radius: 0.5rem;
+    margin-bottom: 1.3rem;
+}
+ion-button{
+    margin-top: 2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8rem;
+}
+ion-text{
+    display: block;
+    text-align: center;
+}
+.login-text{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.login-social-links{
+    background-color: #fff;
+    border: #004C6C solid 0.15rem;
+    color: #004C6C;
+    font-size: 2rem;
+    border-radius: 1rem;
+    padding: 0;
+}
+.login-social-links ion-icon{
+    margin-top: 0.6rem;
+}

@@ -1,0 +1,30 @@
+<ion-content>
+  <div class="header">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+    <h5><span>Module No: </span>{{module?.moduleNo}}</h5>
+  </div>
+  <div class="content">
+    <div class="item-container">
+      <p><span>Module Name: </span><span>{{module?.moduleName}}</span></p>
+    </div>
+    <div class="item-container">
+      <p><span>Credits: </span><span>{{module?.credits}}</span></p>
+    </div>
+    <div class="item-container">
+      <p><span>Website: </span><span>{{module?.website}}</span></p>
+    </div>
+    <div class="item-container">
+      <p><span>Due date: </span><span>{{module?.dueDate}}</span></p>
+    </div>
+    <div class="item-container">
+      <p><span>Room No: </span><span>{{module?.room}}</span></p>
+    </div>
+    <div class="item-container">
+      <p><span>Location: </span><span>{{module?.location}}</span></p>
+    </div>
+    <span class="navigation">
+      <ion-icon name="location-outline"></ion-icon>
+      <a (click)="onNavigate()">Navigate</a>
+    </span>
+  </div>
+</ion-content>

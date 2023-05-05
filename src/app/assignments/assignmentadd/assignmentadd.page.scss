@@ -1,0 +1,68 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 2rem;
+    padding: 1rem;
+    font-family: Poppins;
+}
+.header ion-icon{
+    margin-top: 0.6rem;
+}
+.header h5{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    font-size: 1.2rem;
+    margin-right: auto;
+}
+.header h5 span{
+    font-weight: 600;
+}
+.content{
+    padding: 1.7rem;
+    font-family: Poppins;
+}
+.item-container{
+    width: 100%;
+    padding: 0.3rem;
+    font-size: 1.1rem;
+    border-radius: 0.8rem;
+    margin-bottom: 1rem;
+}
+.item-container p span:nth-child(1){
+    font-weight: 600;
+}
+.item-container p span{
+    text-overflow: no-wrap;
+}
+.item-container ion-label{
+    margin-left: 0.5rem;
+}
+.item-container ion-input{
+    margin-top: 0.3rem;
+    background-color: #D9D9D9;
+    border-radius: 0.3rem;
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+    --padding-top: 1.2rem;
+    --padding-bottom: 1.2rem
+}
+.item-container ion-textarea{
+    margin-top: 0.3rem;
+    background-color: #D9D9D9;
+    border-radius: 0.3rem;
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+    --padding-top: 1.2rem;
+    --padding-bottom: 1.2rem
+}
+span a{
+    font-size: 1.2rem;
+    margin-left: auto;
+    margin-top: 1rem;
+    display: block;
+    text-align: center;
+    margin-right: auto;
+    margin-bottom: 0;
+}

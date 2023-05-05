@@ -1,0 +1,41 @@
+<ion-content>
+  <div class="header">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+    <h5><span>Modify Assignment</span></h5>
+  </div>
+  <div class="content">
+    <div class="item-container">
+      <ion-label>Assignment Name</ion-label>
+      <ion-input type="text" [(ngModel)]="assignment" ></ion-input>
+    </div>
+    <div class="item-container">
+      <ion-label>Module Name</ion-label>
+      <ion-input type="text" [(ngModel)]="module" ></ion-input>
+    </div>
+    <div class="item-container">
+      <ion-label>Start date:</ion-label>
+      <ion-input type="date" [(ngModel)]="startDate" ></ion-input>
+    </div>
+    <div class="item-container">
+      <ion-label>Due date:</ion-label>
+      <ion-input type="date" [(ngModel)]="endDate" ></ion-input>
+    </div>
+    <div class="item-container">
+      <ion-label>Assignment:</ion-label>
+      <ion-textarea type="text" rows="15" [(ngModel)]="description"></ion-textarea>
+    </div>
+    <div class="item-container">
+      <ion-label>Resources:</ion-label>
+      <ngx-dropzone (change)="onUploadFile($event)" [multiple]="false">
+        <ngx-dropzone-label>Drop your resources here!</ngx-dropzone-label>
+        <ngx-dropzone-preview *ngFor="let f of files">
+          <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+        </ngx-dropzone-preview>
+      </ngx-dropzone>
+    </div>
+    <span *ngIf="resources.length">
+      <a (click)="onModifyAssignment()">Modify</a>
+    </span>
+    <ion-alert [isOpen]="isAlertOpen" header="Input Error" message="Please fill all input fields!" [buttons]="alertButtons" (didDismiss)="showError(false)"></ion-alert>
+  </div>
+</ion-content>

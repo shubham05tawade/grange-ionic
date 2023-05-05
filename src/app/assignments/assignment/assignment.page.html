@@ -1,0 +1,28 @@
+<ion-content>
+  <div class="header">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+    <h5><span>{{assignment.name}}</span></h5>
+  </div>
+  <div class="content">
+    <div class="item-container">
+      <p><span>Module Name: </span><br/><span>{{assignment.module}}</span></p>
+    </div>
+    <div class="item-container">
+      <p><span>Start date: </span><span>{{assignment.startDate}}</span></p>
+    </div>
+    <div class="item-container">
+      <p><span>Due date: </span><span>{{assignment.endDate}}</span></p>
+    </div>
+    <div class="item-container">
+      <p><span>Assignment: </span><br/><span>{{assignment.description}}</span></p>
+    </div>
+    <div class="item-container">
+      <p><span>Resources: </span></p><img [src]="assignment.resources"/>
+    </div>
+    <span class="edit-container">
+      <a (click)="navigateToEditAssignment()">Edit</a>
+      <hr/>
+      <a (click)="deleteAssignment()">Delete</a>
+    </span>
+  </div>
+</ion-content>
