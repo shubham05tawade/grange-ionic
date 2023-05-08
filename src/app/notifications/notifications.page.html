@@ -1,14 +1,14 @@
 <ion-content>
   <div class="header">
-    <ion-icon name="chevron-back-outline"></ion-icon>
+    <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
     <h5>All Notifications</h5>
   </div>
   <div class="content">
     <div class="button-container" (click)="navigateToNotification(i)" *ngFor="let notification of notifications; let i =index;">
       <span>
-        <h5>{{notification.message}}</h5>
+        <h5>{{notification.header}}</h5>
       </span>
-      <ion-icon name="mail-unread-outline"></ion-icon>
+      <ion-icon name="mail-unread-outline" *ngIf="notification.readNotification==false"></ion-icon>
     </div>
   </div>
 </ion-content>

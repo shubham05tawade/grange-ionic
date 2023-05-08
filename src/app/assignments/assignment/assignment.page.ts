@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Assignment } from '../assignment';
 import { AssignmentsService } from 'src/app/assignments.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-assignment',
@@ -12,7 +13,7 @@ export class AssignmentPage implements OnInit {
 
   assignment!: Assignment;
 
-  constructor(private routes: ActivatedRoute, private router: Router, private assignmentsSerice: AssignmentsService) {
+  constructor(private routes: ActivatedRoute, private router: Router, private assignmentsSerice: AssignmentsService, private location: Location) {
    }
 
   ngOnInit() {
@@ -29,6 +30,10 @@ export class AssignmentPage implements OnInit {
         this.router.navigate(["/assignments"])
       }
     })
+  }
+
+  goBack(){
+    this.location.back();
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,13 +9,55 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  email: string = "";
+  password: string ="";
+
+  isAlertOpen = false;
+  public alertButtons = ['OK'];
+
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
   }
 
   onLogin(){
-    console.log("Hello")
+    if(! this.loginService.login(this.email, this.password)){
+      this.showError(true);
+    }
+    else{
+      this.router.navigate(["/home"])
+    }
+  }
+
+  async onLoginWithGoogle(){
+    if(await this.loginService.loginWithGoogle()){
+      this.router.navigate(["/home"])
+    }
+    else{
+      this.showError(true);
+    }
+  }
+
+  async onLoginWithTwitter(){
+    if(await this.loginService.loginWithTwitter()){
+      this.router.navigate(["/home"])
+    }
+    else{
+      this.showError(true);
+    }
+  }
+
+  async onLoginWithFacebook(){
+    if(await this.loginService.loginWithFacebook()){
+      this.router.navigate(["/home"])
+    }
+    else{
+      this.showError(true);
+    }
+  }
+
+  showError(isOpen: boolean) {
+    this.isAlertOpen = isOpen;
   }
 
 }

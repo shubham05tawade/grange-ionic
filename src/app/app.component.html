@@ -16,25 +16,25 @@
         <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>GrangeMobile</ion-title>
+        <ion-title (click)="navigateToHome()">GrangeMobile</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-tabs>
         <ion-tab-bar slot="bottom" *ngIf="showMenu" color="primary" class="menu-bottom">
-          <ion-tab-button tab="home">
+          <ion-tab-button tab="home" routerLink="/home">
             <ion-icon name="home"></ion-icon>
             Home
           </ion-tab-button>
-          <ion-tab-button tab="calendar">
+          <ion-tab-button tab="calendar" routerLink="/calendar">
             <ion-icon name="calendar"></ion-icon>
             Calendar
           </ion-tab-button>
-          <ion-tab-button tab="modules">
+          <ion-tab-button tab="modules" routerLink="/modules">
             <ion-icon name="book"></ion-icon>
             Modules
           </ion-tab-button>
-          <ion-tab-button tab="tasks">
+          <ion-tab-button tab="tasks" routerLink="/tasks">
             <ion-icon name="list-outline"></ion-icon>
             Tasks
           </ion-tab-button>

@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { getDownloadURL } from '@angular/fire/storage';
 import { Router } from '@angular/router';
@@ -23,7 +24,7 @@ export class AssignmentaddPage implements OnInit {
   description = "";
   resources = "";
 
-  constructor(public fireStoreService: FirestoreService, private assignmentsService: AssignmentsService, private router: Router) {
+  constructor(public fireStoreService: FirestoreService, private assignmentsService: AssignmentsService, private router: Router, private location: Location) {
    }
 
   ngOnInit() {
@@ -69,6 +70,10 @@ export class AssignmentaddPage implements OnInit {
       this.resources = url;
     })
     
+  }
+
+  goBack(){
+    this.location.back();
   }
 
 }

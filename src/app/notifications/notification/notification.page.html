@@ -1,13 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>notification</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">notification</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="header">
+    <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
+    <h5>Notification</h5>
+  </div>
+  <div class="content">
+    <h5>{{notification.header}}</h5>
+    <small>Due Date: {{notification.date}}</small>
+    <p class="message">{{notification.message}}</p>
+    <button *ngIf="notification.readNotification==false" (click)="onMarkRead()">Mark Read</button>
+  </div>
 </ion-content>

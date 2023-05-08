@@ -10,17 +10,18 @@
   <ion-row class="login-bottom-container ion-justify-content-center">
     <ion-col size="10" class="login-form">
       <ion-text color="primary"><h5 class="ion-text-center">Login</h5></ion-text>
-      <ion-input aria-placeholder="email@mail.com" placeholder="email@mail.com" class="login-input"></ion-input>
-      <ion-input aria-placeholder="password" placeholder="password" class="login-input"></ion-input>
+      <ion-input aria-placeholder="email@mail.com" placeholder="email@mail.com" class="login-input" [(ngModel)]="email"></ion-input>
+      <ion-input type="password" aria-placeholder="password" placeholder="password" class="login-input" [(ngModel)]="password"></ion-input>
       <ion-button fill="outline" (click)="onLogin()">Login</ion-button>
       <ion-text color="primary ion-text-center login-text"><small>or login with</small></ion-text>
       <ion-grid>
         <ion-row class="ion-justify-content-around ion-text-center">
-          <ion-col size="3" class="login-social-links"><ion-icon name="logo-facebook"></ion-icon></ion-col>
-          <ion-col size="3" class="login-social-links"><ion-icon name="logo-twitter"></ion-icon></ion-col>
-          <ion-col size="3" class="login-social-links"><ion-icon name="logo-linkedin"></ion-icon></ion-col>
+          <ion-col size="3" class="login-social-links" (click)="onLoginWithGoogle()"><ion-icon name="logo-google"></ion-icon></ion-col>
+          <ion-col size="3" class="login-social-links" (click)="onLoginWithFacebook()"><ion-icon name="logo-facebook"></ion-icon></ion-col>
+          <ion-col size="3" class="login-social-links" (click)="onLoginWithTwitter()"><ion-icon name="logo-twitter"></ion-icon></ion-col>
         </ion-row>
       </ion-grid>
     </ion-col>
+    <ion-alert [isOpen]="isAlertOpen" header="Input Error" message="Please check your email and password!" [buttons]="alertButtons" (didDismiss)="showError(false)"></ion-alert>
   </ion-row>
 </ion-grid>

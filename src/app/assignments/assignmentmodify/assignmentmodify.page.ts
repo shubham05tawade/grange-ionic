@@ -1,8 +1,10 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { getDownloadURL } from '@angular/fire/storage';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AssignmentsService } from 'src/app/assignments.service';
 import { FirestoreService } from 'src/app/firestore.service';
+
 
 @Component({
   selector: 'app-assignmentmodify',
@@ -24,7 +26,7 @@ export class AssignmentmodifyPage implements OnInit {
   description = "";
   resources = "";
 
-  constructor(public fireStoreService: FirestoreService, private assignmentsService: AssignmentsService, private router: Router, private route: ActivatedRoute) {
+  constructor(public fireStoreService: FirestoreService, private assignmentsService: AssignmentsService, private router: Router, private route: ActivatedRoute, private location: Location) {
    }
 
   ngOnInit() {
@@ -77,6 +79,10 @@ export class AssignmentmodifyPage implements OnInit {
       this.resources = url;
     })
     
+  }
+
+  goBack(){
+    this.location.back();
   }
 
 }

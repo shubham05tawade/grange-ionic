@@ -29,3 +29,5 @@
     font-family: 'Poppins';    //This is what we are going to call
     src: url('../src/assets/fonts/Poppins/Poppins-Regular.ttf');
   }
+
+  @import "~leaflet/dist/leaflet.css"

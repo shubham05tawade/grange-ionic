@@ -7,5 +7,5 @@ export interface Module{
     room: number,
     lat: number,
     location: string,
-    long: number
+    long: number,
 }

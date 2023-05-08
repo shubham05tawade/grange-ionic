@@ -1,28 +1,17 @@
 <ion-content>
   <div class="header">
-    <ion-icon name="chevron-back-outline"></ion-icon>
+    <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
     <h5>All Modules</h5>
   </div>
   <div class="content">
-    <div class="button-container" (click)="navigateToModule($event)" id="1">
-      <span>
-        <h5>999001</h5>
-        <p>Dynamic Web Development</p>
-      </span>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
-    </div>
-    <div class="button-container" (click)="navigateToModule($event)" id="2">
-      <span>
-        <h5>999001</h5>
-        <p>Dynamic Web Development</p>
-      </span>
-      <ion-icon name="chevron-forward-outline"></ion-icon>
-    </div>
-    <div class="button-container" (click)="navigateToModule($event)" id="3">
-      <span>
-        <h5>999001</h5>
-        <p>Dynamic Web Development</p>
-      </span>
+    <div class="button-container" (click)="navigateToModule(i)" *ngFor="let module of modules; let i= index">
+      <div>
+        <img src="https://ui-avatars.com/api/?name=John+Doe&background=random" (load)="onImageLoad(i, $event)"/>
+        <span>
+          <h5>{{module?.moduleNo}}</h5>
+          <p>{{module?.moduleName}}</p>
+        </span>
+      </div>
       <ion-icon name="chevron-forward-outline"></ion-icon>
     </div>
   </div>

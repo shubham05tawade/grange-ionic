@@ -1,0 +1,43 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 2rem;
+    padding: 1rem;
+    font-family: Poppins;
+}
+.header ion-icon{
+    margin-top: 0.6rem;
+}
+.header h5{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    font-size: 1.3rem;
+    margin-right: auto;
+    font-weight: 600;
+}
+.content{
+    padding: 1.7rem;
+    font-family: Poppins;
+}
+.content h5{
+    font-size: 1.5rem;
+}
+.content p{
+    padding: 1.3rem;
+    background-color: #CFCFCF;
+    border-radius: 0.5rem;
+}
+.content button{
+    margin-top: 1.7rem;
+    padding: 1.2rem;
+    background-color: transparent;
+    border: 0.1rem solid #000;
+    border-radius: 1rem;
+    font-size: 1rem;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

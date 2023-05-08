@@ -18,7 +18,7 @@ export class AppComponent {
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.showMenu = event.url !== '/login';
+        this.showMenu = event.url !== '/';
       }
     });
   }
@@ -26,6 +26,12 @@ export class AppComponent {
   appPages: MenuItem[] = [{
     title: 'Home',
     url: '/home'
+  },{
+    title: 'Notifications',
+    url: '/notifications'
+  },{
+    title: 'Assignments',
+    url: '/assignments'
   },{
     title: 'Modules',
     url: '/modules'
@@ -39,4 +45,8 @@ export class AppComponent {
     title: 'Log out',
     url: '/login'
   }]
+
+  navigateToHome(){
+    this.router.navigate(['/home'])
+  }
 }

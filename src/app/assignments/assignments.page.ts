@@ -32,4 +32,8 @@ export class AssignmentsPage implements OnInit {
   navigateToAddAssignment(){
     this.router.navigate(['/assignments/assignmentadd']);
   }
+
+  goBack(){
+    this.router.navigate(["/home"]);
+  }
 }

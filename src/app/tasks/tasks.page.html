@@ -4,18 +4,37 @@
     <h5>My Tasks</h5>
   </div>
   <div class="content">
-    <div class="checkbox-container">
-      <ion-checkbox></ion-checkbox>
-      <label for="">Grade Assignments</label>
-    </div>
-    <div class="checkbox-container">
-      <ion-checkbox></ion-checkbox>
-      <label for="">Grade Assignments</label>
-    </div>
-    <div class="checkbox-container">
-      <ion-checkbox></ion-checkbox>
-      <label for="">Grade Assignments</label>
-    </div>
-    <ion-button fill="outline" class="ion-button">Add New Task</ion-button>
+    <ng-container *ngFor="let t of tasks; let i =index">
+      <div class="checkbox-container" *ngIf="t.finished==0 ? true: false">
+        <ion-checkbox [id]="t.id" (ionChange)="markTaskFinish(i, $event)"></ion-checkbox>
+        <label for="">{{t.task}}</label>
+      </div>
+    </ng-container>
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end" class="float-button-container">
+      <ion-fab-button id="open-modal" expand="block">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar color="primary" class="modal-header">
+            <ion-buttons slot="start">
+              <ion-button (click)="cancel()">Cancel</ion-button>
+            </ion-buttons>
+            <ion-title>Add Task</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-item>
+            <ion-label position="stacked">Task Detail</ion-label>
+            <ion-input type="text" placeholder="Task" [(ngModel)]="task"></ion-input>
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
   </div>
 </ion-content>

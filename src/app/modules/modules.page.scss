@@ -28,8 +28,18 @@
     align-items: center;
     justify-content: space-between;
 }
-.button-container span{
+.button-container div{
     font-family: Poppins;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.button-container div img{
+    border-radius: 50%;
+}
+.button-container span{
+    margin-left: 1rem;
 }
 .button-container span h5{
     font-weight: 600;
