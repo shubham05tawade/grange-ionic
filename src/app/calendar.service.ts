@@ -17,6 +17,6 @@ export class CalendarService {
   }
 
   addCalendar(calendar: any){
-    return this.httpClient.get(this.configUrl+"json-create-calendar.php", calendar)
+    return this.httpClient.post(this.configUrl+"json-create-calendar.php", calendar)
   }
 }

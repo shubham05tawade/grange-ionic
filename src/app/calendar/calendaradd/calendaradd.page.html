@@ -1,28 +1,29 @@
 <ion-content>
   <div class="header">
     <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
-    <h5>My Tasks</h5>
+    <h5>Add Schedule</h5>
   </div>
   <div class="content">
-    <ion-radio-group value="grape">
+    <ion-radio-group (ionChange)="onSelectModule($event)" *ngIf="!showDates">
       <ng-container *ngFor="let module of modules; let i =index">
         <div class="checkbox-container">
           <div>
-            <ion-radio [id]="i" slot="start" class="radio-button"></ion-radio>
+            <ion-radio [id]="i" slot="start" class="radio-button" ></ion-radio>
             <label for="">{{module.moduleName}}</label>
           </div>
         </div>
       </ng-container>
-      <div class="time-container">
-        <span>
-          <small>Start Time</small>
-          <ion-datetime presentation="time"></ion-datetime>
-        </span>
-        <span>
-          <small>End Time</small>
-          <ion-datetime presentation="time"></ion-datetime>
-        </span>
-      </div>
     </ion-radio-group>
+    <div class="time-container" *ngIf="showDates">
+      <div>
+        <p>Start Time</p>
+        <ion-datetime presentation="time" [(ngModel)]="startTime"></ion-datetime>
+      </div>
+      <div>
+        <p>End Time</p>
+        <ion-datetime presentation="time" display-format="h:mm A" [(ngModel)]="endTime"></ion-datetime>
+      </div>
+      <ion-button fill="outline" (click)="onAddToSchedule()">Add to Schedule</ion-button>
+    </div>
   </div>
 </ion-content>

@@ -16,6 +16,7 @@ export class CalendarPage implements OnInit {
 
   ngOnInit() {
     this.routes.params.subscribe((param: any) => {
+      this.calendars = [];
       this.calendarservice.getCalendar().subscribe((data: any) => {
         data.calendars.map((calendar: Calendar) => {
           this.calendars.push(calendar);

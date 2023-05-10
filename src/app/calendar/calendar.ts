@@ -1,6 +1,6 @@
 export interface Calendar{
     id?: number,
-    moduleId: string,
+    moduleId: number,
     moduleName: string,
     startTime: string,
     endTime: string
