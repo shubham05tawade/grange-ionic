@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TaskPageRoutingModule } from './task-routing.module';
+import { CalendaraddPageRoutingModule } from './calendaradd-routing.module';
 
-import { TaskPage } from './task.page';
+import { CalendaraddPage } from './calendaradd.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TaskPageRoutingModule
+    CalendaraddPageRoutingModule
   ],
-  declarations: [TaskPage]
+  declarations: [CalendaraddPage]
 })
-export class TaskPageModule {}
+export class CalendaraddPageModule {}

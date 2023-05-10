@@ -27,4 +27,12 @@ export class AssignmentsService {
   modifyAssignments(assignment: Assignment){
     return this.http.put(this.configUrl+"json-update-assignment.php", assignment)
   }
+
+  getLatestAssignment(){
+    return this.http.get(this.configUrl+"json-latest-assignment.php")
+  }
+
+  updateAssignmentEndDate(id:any, endDate:any){
+    return this.http.put(this.configUrl+"json-update-date-assignment.php", {id: id, endDate: endDate})
+  }
 }

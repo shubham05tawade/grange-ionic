@@ -1,13 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>calendar</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">calendar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="header">
+    <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
+    <h5>My Schedule</h5>
+  </div>
+  <div class="content">
+    <div class="button-container" *ngFor="let calendar of calendars; let i= index">
+      <span>
+        <h5>{{calendar?.moduleName}}</h5>
+        <p>{{calendar?.startTime}} - {{calendar?.endTime}}</p>
+      </span>
+    </div>
+  </div>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" class="float-button-container">
+    <ion-fab-button (click)="navigateToAddCalendar()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

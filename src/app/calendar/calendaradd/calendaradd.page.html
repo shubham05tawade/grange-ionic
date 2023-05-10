@@ -1,0 +1,28 @@
+<ion-content>
+  <div class="header">
+    <ion-icon name="chevron-back-outline" (click)="goBack()"></ion-icon>
+    <h5>My Tasks</h5>
+  </div>
+  <div class="content">
+    <ion-radio-group value="grape">
+      <ng-container *ngFor="let module of modules; let i =index">
+        <div class="checkbox-container">
+          <div>
+            <ion-radio [id]="i" slot="start" class="radio-button"></ion-radio>
+            <label for="">{{module.moduleName}}</label>
+          </div>
+        </div>
+      </ng-container>
+      <div class="time-container">
+        <span>
+          <small>Start Time</small>
+          <ion-datetime presentation="time"></ion-datetime>
+        </span>
+        <span>
+          <small>End Time</small>
+          <ion-datetime presentation="time"></ion-datetime>
+        </span>
+      </div>
+    </ion-radio-group>
+  </div>
+</ion-content>

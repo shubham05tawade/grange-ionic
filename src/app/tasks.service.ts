@@ -22,7 +22,6 @@ export class TasksService {
   }
 
   addTask(task: string){
-    console.log(task)
     return this.httpClient.post(this.configUrl + "json-create-task.php", {task: task});
   }
 }

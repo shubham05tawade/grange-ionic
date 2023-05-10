@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: CalendarPage
+  },
+  {
+    path: 'calendaradd',
+    loadChildren: () => import('./calendaradd/calendaradd.module').then( m => m.CalendaraddPageModule)
   }
 ];
 

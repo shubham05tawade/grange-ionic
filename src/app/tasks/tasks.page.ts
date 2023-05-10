@@ -66,6 +66,10 @@ export class TasksPage implements OnInit {
     }
   }
 
+  goBack(){
+    this.router.navigate(["/home"]);
+  }
+
   onWillDismiss(event: Event) {
     const ev = event as CustomEvent<OverlayEventDetail<string>>;
     if (ev.detail.role === 'confirm') {

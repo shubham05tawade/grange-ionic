@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Calendar } from './calendar';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CalendarService } from '../calendar.service';
 
 @Component({
   selector: 'app-calendar',
@@ -7,9 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalendarPage implements OnInit {
 
-  constructor() { }
+  calendars: Calendar[] = [];
+
+  constructor(private router: Router, private routes: ActivatedRoute, private calendarservice: CalendarService) { }
 
   ngOnInit() {
+    this.routes.params.subscribe((param: any) => {
+      this.calendarservice.getCalendar().subscribe((data: any) => {
+        data.calendars.map((calendar: Calendar) => {
+          this.calendars.push(calendar);
+        })
+      })
+    })
+  }
+
+  goBack(){
+    this.router.navigate(["/home"])
+  }
+
+  navigateToAddCalendar(){
+    this.router.navigate(["/calendar/calendaradd"])
+
   }
 
 }

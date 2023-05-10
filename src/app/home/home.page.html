@@ -47,19 +47,20 @@
         <ion-row class="ion-justify-content-between">
             <ion-col size="6">
                 <p>Latest Assignment</p>
-                <h5>CA-2 Submission</h5>
+                <h5>{{assignment.name}}</h5>
             </ion-col>
             <ion-col size="4">
-                <ion-icon name="create-outline"></ion-icon>
+                <ion-icon name="create-outline" (click)="onEditDate()"></ion-icon>
             </ion-col>
         </ion-row>
         <ion-row class="ion-justify-content-between">
             <ion-col size="6">
                 <p>Due on:</p>
-                <h5>08-05-2023</h5>
+                <h5 *ngIf="!isEditDate">{{assignment.endDate}}</h5>
+                <ion-input type="date" *ngIf="isEditDate" [ngModel]="endDate | date:'y-MM-dd'" (ngModelChange)="onChangeAssignmentEndDate($event)"></ion-input>
             </ion-col>
             <ion-col size="4">
-                <p class="section-4-p">2 days left</p>
+                <p class="section-4-p">{{this.diff}} days left</p>
             </ion-col>
         </ion-row>
     </ion-grid>
