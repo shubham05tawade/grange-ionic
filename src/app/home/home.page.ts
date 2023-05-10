@@ -15,7 +15,8 @@ export class HomePage {
   currentDate: any; diff: any; endDate: any;
   isEditDate = false;
 
-  constructor(private router: Router, private routes: ActivatedRoute, private assignmentsService: AssignmentsService) {}
+  constructor(private router: Router, private routes: ActivatedRoute, private assignmentsService: AssignmentsService) {
+  }
 
   openNotificationsPage(){
     this.router.navigate(["/notifications"])

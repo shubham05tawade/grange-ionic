@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 interface MenuItem {
@@ -48,5 +48,7 @@ export class AppComponent {
 
   navigateToHome(){
     this.router.navigate(['/home'])
+  }
+  ngOnInit(){
   }
 }

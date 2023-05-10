@@ -30,7 +30,8 @@ export class LoginPage implements OnInit {
   }
 
   async onLoginWithGoogle(){
-    if(await this.loginService.loginWithGoogle()){
+    const isLogin = await this.loginService.loginWithGoogle();
+    if(isLogin){
       this.router.navigate(["/home"])
     }
     else{
